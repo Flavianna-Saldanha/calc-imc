@@ -5,6 +5,8 @@ import Image from "next/image";
 import powered from "@/src/assets/powered.png";
 import { useState } from 'react';
 
+import { levels, calculateImc } from './helpers/imc';
+
 
 const Page = () => {
 	const [heightField, setHeightField] = useState<number>(0);
