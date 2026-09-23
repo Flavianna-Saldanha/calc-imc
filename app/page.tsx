@@ -4,8 +4,9 @@ import styles from './Page.module.css';
 import Image from "next/image";
 import powered from "@/src/assets/powered.png";
 import { useState } from 'react';
+import { GridItem } from '@/src/components/GridItem/gridItem';
 
-import { levels, calculateImc } from './helpers/imc';
+import { levels, calculateImc } from '@/src/helpers/imc';
 
 
 const Page = () => {
@@ -53,7 +54,11 @@ const Page = () => {
 					<button onClick={handleCalculateButton}>Calcular</button>
 				</div>
 				<div className={styles.rightSide}>
-					...
+					<div className={styles.grid}>
+						{levels.map((item, key) => (
+							<GridItem key={key} item={item} />
+						))}
+					</div>
 				</div>
 			</div>
 		</div>
