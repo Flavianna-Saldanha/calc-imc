@@ -30,7 +30,7 @@ const Page = () => {
 
 	return (
 		<div className={styles.main}>
-			<header>
+			<header className={styles.header}>
 				<div className={styles.headerContainer}>
 					<Image
 						src={powered}
