@@ -5,7 +5,7 @@ import Image from "next/image";
 import powered from "@/src/assets/powered.png";
 import { useState } from 'react';
 import { GridItem } from '@/src/components/GridItem/gridItem';
-
+import leftArrowImage from '@/src/assets/leftarrow.png';
 import { levels, calculateImc, Level } from '@/src/helpers/imc';
 
 
@@ -20,6 +20,12 @@ const Page = () => {
 		} else {
 			alert("Digite todos os campos.");
 		}
+	}
+
+	const handleBackButton = () => {
+		setToShow(null);
+		setHeightField(0);
+		setWeightField(0);
 	}
 
 	return (
@@ -64,7 +70,13 @@ const Page = () => {
 					}
 					{toShow &&
 						<div className={styles.rightBig}>
-							<div className={styles.rightArrow}></div>
+							<div className={styles.rightArrow} onClick={handleBackButton}>
+								<Image
+									src={leftArrowImage}
+									width={20}
+									alt="left Arrow Image"
+								/>
+							</div>
 							<GridItem item={toShow}/>
 						</div>
 					}
